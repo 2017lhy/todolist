@@ -1,8 +1,9 @@
-import React from 'react';
+import React from 'react'
+import {Component, Fragment} from 'react';
 import TodoItem from './TodoItem';
 import { gray } from 'ansi-colors';
 
-class TodoList extends React.Component 
+class TodoList extends Component 
 {
   constructor(props)
   {
@@ -60,7 +61,7 @@ class TodoList extends React.Component
   {
     return (
       // 类似vue的template
-      <React.Fragment> 
+      <Fragment> 
         <div>
           <input 
             type="text" 
@@ -75,7 +76,7 @@ class TodoList extends React.Component
         <ul
           style={{padding:0}} 
         >{this.getTodoItems()}</ul>
-      </React.Fragment>
+      </Fragment>
     )
   }
 }

@@ -2,12 +2,14 @@ import React from 'react'
 import {Component, Fragment} from 'react';
 import TodoItem from './TodoItem';
 import { gray } from 'ansi-colors';
+import Test from './Test';
 
 class TodoList extends Component 
 {
   constructor(props)
   {
     super(props);
+    // 当组件的state或则props发生变化的时候，render就会重新执行
     this.state = {
       list:[],
       inputValue:''
@@ -57,8 +59,7 @@ class TodoList extends Component
     )
   }
 
-  render() 
-  {
+  render() {
     return (
       // 类似vue的template
       <Fragment> 
@@ -75,7 +76,9 @@ class TodoList extends Component
         </div>
         <ul
           style={{padding:0}} 
-        >{this.getTodoItems()}</ul>
+        >{this.getTodoItems()}
+        </ul>
+        <Test content={this.state.inputValue}></Test>
       </Fragment>
     )
   }
